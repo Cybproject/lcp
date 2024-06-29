@@ -1,0 +1,543 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+body{
+    font-family: Inter;
+    overflow-x: hidden;
+    
+}
+.dbody{
+    background-image: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)), url("Images/health-still-life-with-copy-space.jpg");
+    background-size: cover;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center;
+    width: 100%;
+}
+nav{
+    color: white;
+    height: 80px;
+    width: 100%;
+    z-index: +1;
+    
+}
+.logo{
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+    animation-name: nav;
+    animation-duration: 2s;
+}
+
+@keyframes  nav{
+    from{
+        margin-right: -400px;
+        opacity: 0;
+    }
+    to{
+        margin-right: 20px;
+        opacity: 1;
+    }
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    border:2px solid transparent;
+    box-sizing: border-box;
+    
+}
+nav ul li:hover{
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    border-bottom: 2px solid white;
+}
+/* nav ul li:hover ~a{ */
+    /* color: blue;
+} */
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 40px;
+}
+nav i{color: white;}
+.btn:hover .home2{
+    transition-duration: 0.3s;
+}
+/* .home, a:hover{
+    background: #1b9bff;
+    transition-duration: .5s;
+} */
+.checkbtn{
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+.front-page{
+    /* background-color: #E1FCFF; */
+    height: calc(100vh - 84px);
+    display: flex;
+    width: 100%;
+}
+#content{
+    /* padding: 50px 100px; */
+    width: 100%;
+    margin: 50px auto;
+    /* white-space: nowrap; */
+    animation-name: content;
+    animation-duration: 2s;
+}
+#content p{
+    color: white;
+}
+@keyframes content {
+    from {opacity: 0;
+        padding: 100px 0px;
+    }
+    to {
+        opacity: 1;
+        padding: 50px auto;
+    }
+  }
+
+#content p{
+    font-size: 17px;
+    padding: 20px 0;
+}
+#content h1{
+    font-size: 60px;
+    color: #fff;
+}
+#content a{
+    color: white;
+}
+#content button{
+    border: 2px solid #fff;
+    padding: 15px 30px;
+    color: white;
+    font-size: 14px;
+    border-radius: 1px;
+    background-color: transparent;
+}
+#content button:hover a{
+    color: #000;
+}
+#content button:hover{
+    transition-duration: 0.3s;
+    background-color: white;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+.front-page img{
+    float: right; 
+    margin: 30px 0; 
+    width:70%; 
+    height:110%;
+}
+.offer{
+    height: 70vh;
+    /* background-color: #F3F4F6; */
+    padding: 50px 100px;
+    animation-name: content;
+    animation-duration: 2s;
+}
+
+.offer h1{
+    font-size: 47px;
+    font-weight: 500;
+}
+.offer p {
+    font-size: 17px;
+    color: grey;
+}
+.offer div div{
+    box-shadow: 0 0 7px rgb(224, 224, 224);
+    width: fit-content;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 9px;
+    margin: 20px 10px;
+    
+}
+.flexi{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 5px;
+}
+.offer div p{
+    text-align: center;
+    background-color: #fff;
+    border-radius: 9px 9px 0 0;
+    width: 100%;
+    padding: 4px 0 0 0;
+}
+.offer h2{
+    font-size: 29px;
+    font-weight: 400;
+    padding: 20px;
+}
+.offer h4{
+    font-weight: 400;
+    padding: 20px 20px;
+}
+.offer img{
+    width: 50px;
+}
+@media (max-width: 1000px){
+    .logo{
+        font-size: 30px;
+        padding-left: 25px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+    #content{
+        width: 85%;
+    }
+}
+@media (max-width: 950px) {
+    .description{
+        width: 75%;
+    }
+    .logo{
+        font-size: 17px;
+        margin-left: -15px;
+        width: 180%;
+    }
+    
+    .checkbtn{
+        display: block
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        color: black;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+    }
+    nav ul li a{
+        font-size: 20px;
+        color: black;
+    }
+    a:hover, .active{
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    .front-page{
+        display: block;
+    }
+    .front-page img{
+       width: 70%;
+       height: 50vh;
+       float: none;
+       display: block;
+       margin: 0 auto;
+    }
+    #content{
+        width: 93%;
+        margin-top: 70px;
+        text-align: center;
+    }
+    #content h1{
+        font-size: 64px;
+    }
+    .offer{
+    height: 70vh;
+    /* background-color: #F3F4F6; */
+    padding: 25px 15px;
+}
+.flexi{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+    grid-gap: 5px;
+}
+    
+   
+}
+@media (max-width: 600px) {
+    .logo{ font-size: 17px; }
+    #content{
+        width: 93%;
+    }
+    #content h1{
+        font-size: 34px;
+    }
+}
+/* @media (max-width: 1350px) {
+    .front-page img{
+        width: 42%;
+        height: 90%;
+    }
+} */
+
+#question{
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 17px;
+    text-align: center;
+}
+#f-services{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.container{
+    width: 80%;
+    height: 340px;
+    display: flex;
+    gap: 10px;
+    margin: auto;
+}
+.card{
+    width: 70px;
+    height: 100%;
+    border-radius: 30px;
+    align-items: flex-end;
+    flex-grow: 1;
+    position: relative;
+    transition: flex-grow 0.5s ease-out;
+    background-color: rgb(0, 174, 255);
+}
+.card:hover {
+    flex-grow: 8;
+    
+}
+.card-content > .title{
+    margin-left: 10px;
+    translate: 0 100%;
+    transition-duration: 0.5s;
+    opacity: 0;
+}
+.card:hover .title {
+    color: white;
+    opacity: 1;
+    translate: 0 0;
+}
+.title{
+    text-align: center;
+}
+.card-content:nth-child(1){
+    margin-top: 20px;
+}
+.card:nth-child(1){
+    background-image: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)), url("Images/Duchess-Family-Medicine-Urgent-care.webp");
+    background-size: cover;
+}
+.card:nth-child(1):hover{
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url("Images/Duchess-Family-Medicine-Urgent-care.webp");
+    background-size: cover;
+}
+
+.card:nth-child(2){
+    background-image: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)), url("Images/Duchess-Emergency-Medicine-Intensive-care_big.webp");
+    background-size: cover;
+}
+.card:nth-child(2):hover{
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url("Images/Duchess-Emergency-Medicine-Intensive-care_big.webp");
+    background-size: cover;
+}
+
+.card:nth-child(3){
+    background-image: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)), url("Images/Duchess-Specialist-Services-1.webp");
+    background-size: cover;
+}
+.card:nth-child(3):hover{
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url("Images/Duchess-Specialist-Services-1.webp");
+    background-size: cover;
+}
+
+.card:nth-child(4){
+    background-image: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)), url("Images/Duchess-Interventional-Radiology-Imaging-Services-1.webp");
+    background-size: cover;
+}
+.card:nth-child(4):hover{
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url("Images/Duchess-Interventional-Radiology-Imaging-Services-1.webp");
+    background-size: cover;
+}
+
+.card:nth-child(5){
+    background-image: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)), url("Images/Duchess-Laboratory-Services-1.webp");
+    background-size: cover;
+}
+.card:nth-child(5):hover{
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url("Images/Duchess-Laboratory-Services-1.webp");
+    background-size: cover;
+}
+
+@media (max-width: 700px) {
+    
+    .card{
+        width: 80%;
+        height: 300px;
+        margin: auto;
+        margin-bottom: 15px;
+        
+    }
+    .card-content > .title{
+        color: white;
+        opacity: 1;
+        translate: 0 0;
+        margin-top: 30px;
+
+    }
+    .title:nth-child(1){padding-top: 30px;}
+    .card:nth-child(1):hover{
+        background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)),  url("Images/Duchess-Family-Medicine-Urgent-care.webp");
+        background-size: cover;
+    }
+    .card:nth-child(2):hover{
+        background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)),  url("Images/Duchess-Emergency-Medicine-Intensive-care_big.webp");
+        background-size: cover;
+    }
+    .card:nth-child(3):hover{
+        background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)),  url("Images/Duchess-Specialist-Services-1.webp");
+        background-size: cover;
+    }
+    .card:nth-child(4):hover{
+        background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)),  url("Images/Duchess-Interventional-Radiology-Imaging-Services-1.webp");
+        background-size: cover;
+    }
+    .card:nth-child(5):hover{
+        background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)),  url("Images/Duchess-Laboratory-Services-1.webp");
+        background-size: cover;
+    }
+    .container{
+        display: block;
+        height: fit-content;
+    }
+    
+}
+.container2{
+    text-align: center;
+    margin-top: 80px;
+    background-color: #1c3eff;
+    color: white;
+    height: 120vh;
+}
+.description{
+    width: 60%;
+    margin: auto;
+    padding-top: 30px;
+}
+.description h1{
+    font-weight: 700;
+    
+}
+.description p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+.numbers{
+     display: block; 
+    width: 100%;
+    margin:auto;
+
+}
+.icon{
+    width: 200px;
+    margin-top: 40px;
+}
+.row{
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+.digit{
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: 900;
+}
+.tag{
+    margin-top: 15px;
+}
+@media (max-width: 700px) {
+    .description{
+        width: 80%;
+    }
+    .row{
+    display: block;
+}
+.row:nth-child(2){
+    padding-bottom: 40px;
+}
+.container2{
+    height: fit-content;
+}
+.description h1{
+    width: 110%;
+    margin-left: -20px;
+}
+}
+.container3{
+    text-align: center;
+    margin-top: 50px;
+}
+.container3 p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    width: 90%;
+    margin: auto;
+}
+.doctors{
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+   
+}
+.doctors img{
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+@media (max-width: 700px) {
+    .doctors{
+    display: inline-block;
+    width: 150px;
+    margin: 10px;
+}
+}
+footer{
+    margin-top: 30px;
+    background-color: #000;
+    color: aliceblue;
+}
+footer small{
+    word-spacing: 3px;
+    display: flex;
+    letter-spacing: 1px;
+}

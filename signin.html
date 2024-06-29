@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Inter;
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container section{
+            overflow-y: hidden;
+            height: 100%;
+        }
+        .container section:nth-child(2){
+            background-image: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.80)), url("Images/medical.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 40%;
+            height: 100vh;
+        }
+        .container section:nth-child(1){
+            width: 60%;
+            padding-top: 20vh;
+        }
+        .container img{
+            width: 85%;
+            float: right;
+        }
+        .input{
+            width: 45%;
+            margin-top: 40px;
+        }
+        .input input{
+            width: 100%;
+            height:8vh;
+            border-radius: 7px;
+            border: 1px solid #D3DCE0;
+            font-size: 16px;
+            text-indent: 10px;
+        }
+        .input input:focus{
+            border: 1px solid #00A3E0;
+        }
+        .input small{
+            font-weight: bold;
+            color: #414141;
+            padding-bottom: 8px;
+        }
+        button{
+            border: 2px solid #00A3E0;
+            padding: 10px 25px;
+            color: white;
+            border-radius: 50px;
+            font-size: 15px;
+            margin-top: 25px;
+            width: 45%;
+            background-color: #00A3E0;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        @media (max-width: 700px) {
+            .container section:nth-child(2){
+            display: none;
+            
+        }
+        .container section:nth-child(1){
+            width: 100%;
+            padding-top: 20vh;
+        }
+        .input{
+            width: 70%;
+        }
+        .input input{
+            height: 7vh;
+        }
+        }
+        @media (max-width: 1100px) {
+            .input{
+            width: 70%;
+        
+        }
+        }
+    </style>
+
+    <center>
+       <div class="container">
+        <section>
+            <h1 style="letter-spacing: 3px; font-size: xx-large; color: #004A87;">LAUTECH CAREPLUS</h1>
+            <h1> Secure Log In</h1>
+            <div class="input">
+                <div><small style="float: left ;">Email</small> <small style="float: right; color: #00A3E0;">Forgot E-mail</small></div>
+                <input type="text" id="semail" placeholder="Email">
+            </div>
+            <div class="input">
+                <div><small style="float: left ;">Password</small> <small style="float: right; color: #00A3E0;">Forgot Password</small></div>
+                <input type="password" id="spassword" placeholder="Password">
+            </div>
+            <button onclick="signIn()">Log In</button>
+            <div><small>Don't have an accout? <a href="signup.html">Sign Up</a></small></div>
+        </section>
+        <section>
+            <h1 style="width: 90%; margin: auto; color: white; font-size: xxx-large; position: relative; top: 30%;">Unlock New Borders</h1>
+        </section>
+       </div>
+    </center>
+    <script>
+        let storedCredentials = JSON.parse(localStorage.getItem("credentials"));
+
+        let email1 = document.getElementById("semail")
+        let password = document.getElementById("spassword")
+        function signIn(){
+           let myCredentials = storedCredentials.map(credential =>{
+            if (email1.value == credential.email && password.value == credential.password) {
+                console.log("yes", email1.value)
+                email1.style.border = "1px solid green"
+                password.style.border = "1px solid green"
+                window.location.href = "dashboard.html"
+            }else{
+                console.log("not logged")
+                email1.style.border = "1px solid red"
+                password.style.border = "1px solid red"
+            }
+            
+           })
+           
+             
+        }
+    </script>
+
+</body>
+</html>

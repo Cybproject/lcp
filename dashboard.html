@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style-type: none;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+
+        }
+        body{
+            font-family: Inter;
+        }
+        #welcome{
+            width: 100%;
+            padding: 10px 0;
+            background-color: blue;
+            color: white;
+            letter-spacing: 2px;
+            text-indent: 30px;
+        }
+        nav{
+            background-color: blue;
+            /* width: fit-content; */
+            height: 100vh;
+        }
+        nav li{
+            color:white;
+            padding: 30px 20px;
+        }
+        nav li:hover{
+            background-color: white;
+            color: blue;
+        }
+        h2{
+            text-align: center;
+            padding-top: 20px;
+        }
+        #form{
+            width: 80%;
+            margin: auto;
+        }
+        .input small{
+            font-weight: bold;
+        }
+        .input{
+            margin-top: 10px;
+        }
+        .input input{
+            width: 100%;
+            height:8vh;
+            border-radius: 7px;
+            border: 1px solid #D3DCE0;
+            font-size: 16px;
+            text-indent: 10px;
+        }
+        #container{
+            display: flex;
+        }
+        section{
+                width: 50%;
+                margin:0px auto;
+            }
+            .btn{
+                width: 100%; 
+                color: white; 
+                padding: 10px 0; 
+                background-color: blue; 
+                border: none; 
+                border-radius: 5px; 
+                margin-top: 10px;
+            }
+            @media (max-width: 450px) {
+                .input input{
+                height: 6vh;
+            }
+            }
+        @media (max-width: 700px) {
+           
+            #container{
+                display: block;
+            }
+            section{
+                width: 90%;
+            }
+            
+            #welcome{
+                font-size: 10px;
+                text-align: center;
+            }
+            nav li{
+                font-size: 12px;
+                width: 100%;
+                text-align: center;
+                cursor: pointer;
+            }
+           
+            nav a{
+                color: white;
+                width: 100%;
+            }
+            nav li:hover ~ nav a:hover{
+                color: #000;
+            }
+            nav{
+                width: 100%;
+                height: fit-content;
+                display: flex;
+            }
+            
+        }
+        .card{
+            width: 320px;
+            margin-top: 30px auto;
+            overflow: hidden;
+            height: 180px;
+            font-weight: bold;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .name{
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            padding: 15px 0;
+            height: fit-content;
+            text-align: center;
+        }
+        .month{
+            font-size: 40px;
+        }
+        .date{
+            margin-top: 20px;
+            margin-left: 20px;
+            color: blue;
+            width: fit-content;
+            height: 100%;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .card{
+                margin: 10px auto;
+            }
+        }
+    </style>
+
+    <div  id="welcome">
+        <h1>WELCOME TO YOUR DASHBOARD</h1>
+    </div>
+   
+
+    <div id="container">
+        <nav>
+            <a href="#"><li id="btn-appointment">Book Appointment</li></a>
+            <a href="#"><li id="btn-records">Appointment Records</li></a>
+        </nav>
+       <section id="appointment">
+        <h2>Book an Appointment</h2>
+        <div id="form">
+            <div class="input" style="display: flex; justify-content: space-between;">
+                <div style="width: 47%;">
+                    <small>Name</small> <br>
+                    <input  required id="fnames"  placeholder="First" type="text">
+                </div>
+                <div style="width: 47%;">
+                    <small></small> <br>
+                    <input required id="lnames" placeholder="Last" type="text">
+                </div>
+                </div>
+            <div class="input">
+                <small>Phone</small> <br>
+                <input placeholder="e.g 09048346484" type="text">
+            </div>
+            <div class="input">
+                <small>Adress</small> <br>
+                <input placeholder="Street Adress" type="text">
+            </div>
+            <div class="input">
+                <small>Date of Birth</small> <br>
+                <input required type="date">
+            </div>
+            <div class="input" style="display: flex; justify-content: space-between;">
+                <div style="width: 47%;">
+                    <small>Preferd Date</small> <br>
+                    <input required id="dates" placeholder="First" type="date">
+                </div>
+                <div style="width: 47%;">
+                    <small>Prefered Time</small> <br>
+                    <input required id="time" placeholder="Last" type="time">
+                </div>
+                </div>
+           
+            <div class="input">
+                <small>E-mail</small> <br>
+                <input required type="text">
+            </div>
+
+           <button class="btn" id="btn">Book Appointment</button>
+            
+        </div>
+
+        
+       </section>
+       <main style="margin: 10px; width: fit-content; display: none;" id="a-records">
+            
+            
+        </div>
+    </main>
+
+    </div>
+   
+
+
+    <script>
+        const aRecords = document.getElementById("a-records")
+        const appointmentSec = document.getElementById("appointment")
+        const btnAppointment = document.getElementById("btn-appointment")
+        const btnRecords = document.getElementById("btn-records")
+        const btn = document.getElementById("btn")
+        const fnames = document.getElementById("fnames")
+        const lnames = document.getElementById("lnames")
+        const dates = document.getElementById("dates")
+        const time = document.getElementById("time")
+
+        btnAppointment.addEventListener("click", function(){
+            aRecords.style.display = "none"
+            appointmentSec.style.display = "block"
+        })
+
+        btnRecords.addEventListener("click", function(){
+            appointmentSec.style.display = "none"
+            aRecords.style.display = "block"
+
+        })
+
+        btn.addEventListener("click", book)
+
+        let appointmentArray = []
+        function book() {
+             appointmentArray.push({
+                fnames: fnames.value,
+                lnames: lnames.value,
+                dates: dates.value,
+                time: time.value
+            })
+            const monthNames = [
+                    "January", "February", "March", "April", "May", "JUN",
+                    "July", "August", "September", "October", "November", "December"
+                    ];
+
+                    const now = new Date();
+                    const currentMonthName = monthNames[now.getMonth()];
+                    const currentDayOfMonth = now.getDate();
+                    const currentYear = now.getFullYear();
+
+                    
+
+            
+            aRecords.innerHTML = ""
+
+            appointmentArray.map(appointment =>{
+                
+                aRecords.innerHTML = aRecords.innerHTML +  `
+                <div class="card">
+                <div class="name">Appointment with doctor</div>
+                <div style="display: flex;">
+                    <div class="date">
+                    <div class="month">${currentMonthName}</div>
+                    <div>${currentDayOfMonth}, ${currentYear}</div>
+                </div>
+                <div style="margin-top: 20px; margin-left: 30px;">
+                   <div> <span>Name:</span> ${appointment.fnames} ${appointment.lnames}</div>
+                   <div> <span>Date:</span> ${appointment.dates}</div>
+                   <div> <span>Time:</span> ${appointment.time}</div>
+                </div>
+            </div>
+                
+                `
+                
+            })
+
+            alert("Appointment Booked, proceed to the appointment record to see appointment")
+            
+        }
+    </script>
+</body>
+</html>
